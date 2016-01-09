@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="org.nemanjan00.dislike">
+	<head>
+		<title>Dislike busplus</title>
+
+		<meta property="og:image" content="https://www.busplus.rs/images/busPlus-karta.png">
+		<meta property="og:description" content="Peticija za ukidanje plaćanja busplusa. ">
+
+		<!-- Stylesheets -->
+		<link rel="stylesheet" href="./assets/stylesheets/stylesheet.css">
+	</head>
+
+	<body class="text-center">
+		<div ng-controller="dislike" class="btn-group dislike-group" role="group">	
+			<button ng-click="dislike()" type="button" class="btn btn-danger dislike"><i class="fa fa-thumbs-down"></i> Dislike <img src="/assets/images/busplus.png" alt="Bus plus"></button>
+			<button type="button" class="btn btn-default dislike">{{dislikeCount}}</button>
+		</div>
+
+		<script src="./assets/javascript/javascript.js" charset="utf-8"></script>
+		<script src="http://localhost:35729/livereload.js"></script>
+	</body>
+</html>
