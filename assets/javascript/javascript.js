@@ -41494,7 +41494,7 @@ U.prototype.Ve=function(a,b){x("Firebase.resetPassword",2,2,arguments.length);ng
 var count;
 
 angular.module("org.nemanjan00.dislike", ["firebase"])
-.controller("dislike", function($scope, $firebaseObject, $firebaseAuth) {
+.controller("dislike", function($scope, $firebaseObject, $firebaseAuth, $sce) {
 	var ref = new Firebase(firebaseURL);
 
 	var user = ref.getAuth();
@@ -41524,6 +41524,8 @@ angular.module("org.nemanjan00.dislike", ["firebase"])
 
 	$scope.dislike = function(){
 		ref.child("votes").child(user.uid).set(true);
+		$scope.dislikeButton = $sce.trustAsHtml('<i class="fa fa-thumbs-down"></i>');
+		$scope.shareButton = $sce.trustAsHtml('<i class="fa fa-share"></i> Now share');
 	}
 
 	$scope.share = function() {
@@ -41538,6 +41540,8 @@ angular.module("org.nemanjan00.dislike", ["firebase"])
 		window.open('http://www.facebook.com/sharer.php?s=100&p[url]=' + url, 'sharer', 'top=' + winTop + ',left=' + winLeft + ',toolbar=0,status=0,width=' + winWidth + ',height=' + winHeight);
 	}
 
+	$scope.dislikeButton = $sce.trustAsHtml('<i class="fa fa-thumbs-down"></i> Dislike <img src="/assets/images/busplus.png" alt="Bus plus">');
+	$scope.shareButton = $sce.trustAsHtml('<i class="fa fa-share"></i>');
 	$scope.dislikeCount = 0;
 });
 
