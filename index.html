@@ -13,10 +13,10 @@
 
 	<body class="text-center">
 		<div ng-controller="dislike" class="btn-group dislike-group" role="group">	
-			<button ng-click="dislike()" type="button" class="btn btn-danger dislike" ng-bind-html="dislikeButton">{{dislikeButton}}</button>
-			<button type="button" class="btn btn-default dislike">{{dislikeCount}}</button>
+			<button ng-click="dislike()" type="button" class="btn btn-danger dislike" ng-bind-html="dislikeButton"></button>
+			<button type="button" class="btn btn-default dislike" ng-bind="dislikeCount"></button>
 
-			<button ng-click="share()" type="button" class="btn btn-primary dislike">{{shareButton}}</button>
+			<button ng-click="share()" type="button" class="btn btn-primary dislike" ng-bind-html="shareButton"></button>
 		</div>
 
 		<script src="./assets/javascript/javascript.js" charset="utf-8"></script>
